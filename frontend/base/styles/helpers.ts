@@ -64,10 +64,16 @@ export const FONT_WEIGHT: Partial<Record<Size, Length>> = {
   xxl: 700,
 };
 
-export const BORDER: Partial<
-  Record<keyof typeof COLOR, Partial<Record<Size, Length>>>
-> = {
-  gray: {},
+export const BORDER: Partial<Record<keyof typeof COLOR, any>> = {
+  gray: {
+    lighter: {
+      sm: "",
+    },
+  },
+};
+
+export const BORDER_RADIUS: Partial<Record<Size, Length>> = {
+  sm: px(4),
 };
 
 export const makeDeviceMediaBreakpoint =
