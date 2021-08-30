@@ -7,21 +7,25 @@ import {
   COLOR,
   FONT_SIZE,
 } from "base/styles/helpers";
-import { BUTTON_STYLE_VARIANTS } from "base/components/button/utils/buttonConstants";
+import {
+  BUTTON_STYLE_VARIANTS,
+  BUTTON_SIZE,
+} from "base/components/button/utils/buttonConstants";
 
 export interface ButtonProps {
+  size?: keyof typeof BUTTON_SIZE;
   variant?: keyof typeof BUTTON_STYLE_VARIANTS;
 }
 
 export const Button = styled.button<ButtonProps>`
   background-color: ${COLOR.primary};
-  color: ${COLOR.white};
   border-radius: ${BORDER_RADIUS.sm};
   border: none;
+  color: ${COLOR.white};
   cursor: pointer;
   font-family: ${FONT_FAMILY.notoSans};
-  padding: ${spacingPx(1, 3)};
   font-size: ${FONT_SIZE.default};
+  padding: ${spacingPx(1, 3)};
 
   ${(props) =>
     props.variant &&
